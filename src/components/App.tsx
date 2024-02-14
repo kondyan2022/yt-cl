@@ -49,6 +49,16 @@ function App() {
           disabled={isLoading}
           className="rounded-md bg-orange-500 px-2 py-1 text-white"
           onClick={() => {
+            setCurrentPage(0)
+          }}
+        >
+          start
+        </button>
+        <button
+          type="button"
+          disabled={isLoading}
+          className="rounded-md bg-orange-500 px-2 py-1 text-white"
+          onClick={() => {
             setCurrentPage((prev) => (prev > 0 ? prev - 1 : prev))
           }}
         >
@@ -64,6 +74,16 @@ function App() {
           }}
         >
           next
+        </button>
+        <button
+          type="button"
+          disabled={isLoading}
+          className="rounded-md bg-orange-500 px-2 py-1 text-white"
+          onClick={() => {
+            setCurrentPage(totalPages - 1)
+          }}
+        >
+          end
         </button>
       </div>
       <table>
