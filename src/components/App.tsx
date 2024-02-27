@@ -15,6 +15,7 @@ interface VideoItem {
   pubDate: string
   updatedAt: string
   createdAt: string
+  duration: string
 }
 
 function App() {
@@ -90,6 +91,7 @@ function App() {
         <tr>
           <th>Logo</th>
           <th className="w-[500px]">Title</th>
+          <th>Duration</th>
           <th>Channel</th>
           <th>Subscribers</th>
           <th>Views</th>
@@ -104,13 +106,15 @@ function App() {
               channelTitle,
               subscribers,
               views,
-              pubDate
+              pubDate,
+              duration
             }) => (
               <tr key={_id}>
                 <td>
                   <img src={logo_url} />
                 </td>
                 <td>{title}</td>
+                <td>{duration}</td>
                 <td>{channelTitle}</td>
                 <td className="text-center">{subscribers}</td>
                 <td className="text-center">{views}</td>
